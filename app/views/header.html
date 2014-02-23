@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{.title}}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="/public/images/favicon.png">
+    <script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+    {{range .moreStyles}}
+      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
+    {{end}}
+    {{range .moreScripts}}
+      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
+    {{end}}
+    <style type="text/css"> 
+    div.bar {
+       display: inline-block;
+       width: 20px;
+       height: 75px;   /* この数値は実行時に上書きされます */
+       background-color: teal;
+    } 
+    </style>  
+  </head>
+  <body>

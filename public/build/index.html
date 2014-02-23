@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Hello, World!</title>
+</head>
+<body rank-list>
+  
+  <h3>title {{ctrl.title}}</h3>
+  
+  <h3>Hello {{name}}!</h3>
+  Name: <input type="text" ng-model="name">
+  
+  <!--
+  <li ng-repeat="phone in ctrl.phones | filter:query | orderBy:ctrl.orderProp">
+    {{phone.name}}
+    <p>{{phone.snippet}}</p>
+  </li>
+  -->
+  
+  <div>{{rankings}}</div>
+  
+  <script src="packages/shadow_dom/shadow_dom.min.js"></script>
+  <script type="application/dart" src="./dart/main.dart"></script>
+  <script type="text/javascript" src="packages/browser/dart.js"></script>
+</body>
+</html>

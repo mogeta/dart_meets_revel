@@ -1,0 +1,39 @@
+{{set . "title" "D3"}}
+{{template "header.html" .}}
+
+<header class="hero-unit" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <div class="hero-text">
+        <h1>It works!</h1>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      test
+    </div>
+  </div>
+</div>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	//var dataset = [ 5, 10, 15, 20, 25 ];
+	var dataset = JSON.parse({{.result}});
+
+   d3.select("body").selectAll("p")
+   .data(dataset)
+   .enter()
+   .append("div")
+   //.attr("class", "bar");
+   .text(function(d) { return "count:"+d.Count+":::";})
+   .append("a")
+   .attr("href",function(d){return d.Url})
+   .html(function(d){return d.Url});
+
+</script>
+{{template "footer.html" .}}

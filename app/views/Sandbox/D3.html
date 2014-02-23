@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+
+  div.bar {
+   display: inline-block;
+   margin-right: 2px;
+   width: 20px;
+   height: 75px;   /* この数値は実行時に上書きされます */
+   background-color: teal;
+ }
+
+</style>
+<body>
+
+  <script src="http://d3js.org/d3.v3.js"></script>
+  <script type="text/javascript">
+
+/*
+    var sampleSVG = d3.select("#viz")
+    .append("svg:svg")
+    .attr("width", 100)
+    .attr("height", 100);
+
+    sampleSVG.append("svg:circle")
+    .style("stroke", "black")
+    .style("fill", "white")
+    .attr("r", 40)
+    .attr("cx", 50)
+    .attr("cy", 50)
+    */
+    var dataset = [ 5, 10, 15, 20, 25 ];
+
+    d3.select("body").selectAll("div")
+    .data(dataset)
+    .enter()
+    .append("div")
+    .attr("class", "bar")
+    .style("height", function(d) {
+     var barHeight = d * 5;  // 高さを 5 倍にします
+    return barHeight + "px";
+ });
+
+
+  </script>
+</body>
+</html>
